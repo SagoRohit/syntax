@@ -406,8 +406,8 @@ std::any MyVisitor::visitStatement(CSubsetParser::StatementContext* ctx) {
         logRule(line, "statement : var_declaration", r.text);
         return VisitResult{r.text, "void"};
     }
-    if (ctx->expression_statement() && !ctx->FOR()) {
-        auto r = std::any_cast<VisitResult>(visit(ctx->expression_statement()));
+    if (!ctx->FOR() && !ctx->expression_statement().empty()) {
+        auto r = std::any_cast<VisitResult>(visit(ctx->expression_statement(0)));
         std::string text = r.text + "\n";
         logRule(line, "statement : expression_statement", text);
         return VisitResult{text, "void"};
