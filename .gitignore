@@ -1,0 +1,17 @@
+# ANTLR-generated files
+CSubsetLexer.*
+CSubsetParser.*
+CSubsetVisitor.*
+CSubsetBaseVisitor.*
+CSubset.interp
+CSubset.tokens
+Lexer.interp
+Lexer.tokens
+
+# Build output
+compiler.out
+
+# Program output
+log.txt
+error.txt
+lexLogFile.txt
